@@ -149,3 +149,13 @@ module Solitaire
   end
   
 end
+
+if __FILE__ == $0
+  if ARGV[0] == '-e'
+    puts Solitaire.encrypt ARGV[1..-1].join(' '), Solitaire::UNKEYED_DECK
+  elsif ARGV[0] == '-d'
+    puts Solitaire.decrypt ARGV[1..-1].join(' '), Solitaire::UNKEYED_DECK
+  else
+    puts "Wrong arguments"
+  end
+end
