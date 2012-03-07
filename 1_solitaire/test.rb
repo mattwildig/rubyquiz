@@ -1,3 +1,5 @@
+gem 'test-unit'
+
 require 'test/unit'
 require './solitaire'
 
@@ -89,7 +91,7 @@ class SolitaireTest < Test::Unit::TestCase
     assert_equal "GLNCQ MJAFF FVOMB JIYCB", e.encrypt("CODEI NRUBY LIVEL ONGER")
   end
   
-  def test_encrypter_unkeyed
+  def test_decrypter_unkeyed
     d = Solitaire::Decrypter.new(Solitaire::KeyStream.new(UNKEYED_DECK))
     assert_equal "CODEI NRUBY LIVEL ONGER", d.decrypt("GLNCQ MJAFF FVOMB JIYCB")
   end
