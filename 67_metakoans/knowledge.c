@@ -31,10 +31,6 @@ static char* ivar_name() {
     return ivar;
 }
 
-static VALUE do_block(VALUE yielded, VALUE proc, int argc, VALUE argv[]) {
-    return rb_proc_call(proc, rb_ary_new());
-}
-
 static VALUE get(VALUE self){    
     char* ivar = ivar_name();
     VALUE val = Qnil;
